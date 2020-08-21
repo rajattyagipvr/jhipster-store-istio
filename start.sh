@@ -17,3 +17,6 @@ jhipster import-jdl istio.jdl --skip-insights
 # and leave it there
 #fg %1
 
+while :; do
+  sleep 300
+done
