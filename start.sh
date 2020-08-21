@@ -5,7 +5,7 @@ set -m
 
 # Start the primary process and put it in the background
 #
-jhipster import-jdl istio.jdl --skip-insights
+jhipster import-jdl istio.jdl --skip-insights --interactive
 # Start the helper process
 #./my_helper_process
 
