@@ -20,3 +20,5 @@ jhipster import-jdl istio.jdl --skip-insights --interactive
 while :; do
   sleep 300
 done
+
+exit 1
