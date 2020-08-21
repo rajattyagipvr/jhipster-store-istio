@@ -85,8 +85,9 @@ pipelineConfig:
               command: echo jhipster | sudo -S chmod -R 777 ./
             - name: import-jdl
               image: jhipster/jhipster:v6.9.0
-              command: "{ echo ''; echo ''; echo ''; echo ''; echo ''; echo ''; }  | jhipster import-jdl istio.jdl --skip-insights --interactive"
-          #   - name: chmod mvnw 
+              #command: "{ echo ''; echo ''; echo ''; echo ''; echo ''; echo ''; }  | jhipster import-jdl istio.jdl --skip-insights --interactive"
+              command: "jhipster import-jdl istio.jdl --skip-insights --interactive" < /dev/null
+              #   - name: chmod mvnw 
           #     image: jhipster/jhipster:v6.9.0
           #     command: echo jhipster | sudo -S chmod +x mvnw  
           #   - name: clean-webpack
