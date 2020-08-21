@@ -86,7 +86,8 @@ pipelineConfig:
             - name: import-jdl
               image: jhipster/jhipster:v6.9.0
               #command: "{ echo ''; echo ''; echo ''; echo ''; echo ''; echo ''; }  | jhipster import-jdl istio.jdl --skip-insights --interactive"
-              command: "jhipster import-jdl istio.jdl --skip-insights --interactive" < /dev/null
+              #command: "jhipster import-jdl istio.jdl --skip-insights --interactive < /dev/null"
+              command: "hipster import-jdl istio.jdl --skip-insights --interactive   <<< Yes"
               #   - name: chmod mvnw 
           #     image: jhipster/jhipster:v6.9.0
           #     command: echo jhipster | sudo -S chmod +x mvnw  
