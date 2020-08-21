@@ -4,24 +4,18 @@
     {
       "fieldName": "placedDate",
       "fieldType": "Instant",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "status",
       "fieldType": "OrderStatus",
       "fieldValues": "COMPLETED,PENDING,CANCELLED",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "code",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "invoiceId",
@@ -30,9 +24,7 @@
     {
       "fieldName": "customer",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     }
   ],
   "relationships": [
@@ -43,7 +35,7 @@
       "relationshipName": "orderItem"
     }
   ],
-  "changelogDate": "20200821172436",
+  "changelogDate": "20200821173203",
   "entityTableName": "product_order",
   "dto": "no",
   "pagination": "pagination",
@@ -53,9 +45,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "product"
-  ],
+  "applications": ["store", "product"],
   "microserviceName": "product"
 }

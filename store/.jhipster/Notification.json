@@ -4,9 +4,7 @@
     {
       "fieldName": "date",
       "fieldType": "Instant",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "details",
@@ -15,35 +13,27 @@
     {
       "fieldName": "sentDate",
       "fieldType": "Instant",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "format",
       "fieldType": "NotificationType",
       "fieldValues": "EMAIL,SMS,PARCEL",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "userId",
       "fieldType": "Long",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "productId",
       "fieldType": "Long",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     }
   ],
   "relationships": [],
-  "changelogDate": "20200821172836",
+  "changelogDate": "20200821173603",
   "javadoc": "Entities for notification microservice",
   "entityTableName": "notification",
   "dto": "no",
@@ -54,9 +44,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "notification"
-  ],
+  "applications": ["store", "notification"],
   "microserviceName": "notification"
 }

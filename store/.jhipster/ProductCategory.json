@@ -4,9 +4,7 @@
     {
       "fieldName": "name",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "description",
@@ -21,7 +19,7 @@
       "relationshipName": "product"
     }
   ],
-  "changelogDate": "20200821172336",
+  "changelogDate": "20200821173103",
   "entityTableName": "product_category",
   "dto": "no",
   "pagination": "no",
@@ -31,9 +29,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "product"
-  ],
+  "applications": ["store", "product"],
   "microserviceName": "product"
 }

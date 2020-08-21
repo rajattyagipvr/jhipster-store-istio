@@ -4,12 +4,7 @@
     "gatewayType": "zuul",
     "monitoring": "no",
     "directoryPath": "../",
-    "appsFolders": [
-      "store",
-      "invoice",
-      "notification",
-      "product"
-    ],
+    "appsFolders": ["store", "invoice", "notification", "product"],
     "clusteredDbApps": [],
     "consoleOptions": [],
     "serviceDiscoveryType": false,
@@ -18,6 +13,7 @@
     "kubernetesNamespace": "jhipster",
     "kubernetesServiceType": "Ingress",
     "ingressDomain": "cluster12.tagscloud.org",
-    "istio": true
+    "istio": true,
+    "jwtSecretKey": "NWI5ZDUyYTRiMTdiZjQ0YWVjOTQ2YmRhOTNmYTI3OTcwM2ZjMGFiODAyYzE1NzRmMTc3ZjcwNWYwNjJiYzU3ZDBjYmM1MDAwMDQwYzVkYzNkMDljMDAyNzllNTNjYzk5MjAwNQ=="
   }
 }

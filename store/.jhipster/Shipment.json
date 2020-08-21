@@ -8,9 +8,7 @@
     {
       "fieldName": "date",
       "fieldType": "Instant",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "details",
@@ -27,7 +25,7 @@
       "otherEntityField": "code"
     }
   ],
-  "changelogDate": "20200821172736",
+  "changelogDate": "20200821173503",
   "entityTableName": "shipment",
   "dto": "no",
   "pagination": "pagination",
@@ -37,9 +35,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "invoice"
-  ],
+  "applications": ["store", "invoice"],
   "microserviceName": "invoice"
 }

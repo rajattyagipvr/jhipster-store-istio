@@ -4,28 +4,20 @@
     {
       "fieldName": "quantity",
       "fieldType": "Integer",
-      "fieldValidateRules": [
-        "required",
-        "min"
-      ],
+      "fieldValidateRules": ["required", "min"],
       "fieldValidateRulesMin": "0"
     },
     {
       "fieldName": "totalPrice",
       "fieldType": "BigDecimal",
-      "fieldValidateRules": [
-        "required",
-        "min"
-      ],
+      "fieldValidateRules": ["required", "min"],
       "fieldValidateRulesMin": "0"
     },
     {
       "fieldName": "status",
       "fieldType": "OrderItemStatus",
       "fieldValues": "AVAILABLE,OUT_OF_STOCK,BACK_ORDER",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     }
   ],
   "relationships": [
@@ -46,7 +38,7 @@
       "otherEntityField": "code"
     }
   ],
-  "changelogDate": "20200821172536",
+  "changelogDate": "20200821173303",
   "entityTableName": "order_item",
   "dto": "no",
   "pagination": "pagination",
@@ -56,9 +48,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "product"
-  ],
+  "applications": ["store", "product"],
   "microserviceName": "product"
 }

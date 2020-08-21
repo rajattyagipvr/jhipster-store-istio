@@ -14,38 +14,30 @@
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
     "jhiPrefix": "jhi",
-    "languages": [
-      "en",
-      "fr"
-    ],
+    "languages": ["en", "fr"],
     "messageBroker": false,
     "nativeLanguage": "en",
     "prodDatabaseType": "mysql",
     "searchEngine": false,
     "skipClient": false,
-    "testFrameworks": [
-      "protractor"
-    ],
+    "testFrameworks": ["protractor"],
     "websocket": false,
     "applicationType": "gateway",
     "packageName": "com.jhipster.demo.store",
     "packageFolder": "com/jhipster/demo/store",
     "useSass": true,
     "jhipsterVersion": "6.9.0",
-    "creationTimestamp": 1598030400539,
+    "creationTimestamp": 1598030880050,
     "skipServer": false,
     "clientPackageManager": "npm",
     "clientTheme": "none",
-    "clientThemeVariant": ""
+    "clientThemeVariant": "",
+    "jwtSecretKey": "ZmUzZmIxNDM0ZDkyZjI5YWY1NGU2MzI3YjMzMzZhNDMwOTgxODQwMzU1MTVhM2ZjOTU5ODI4NTMxNTFkNDc5ODkzZjk4MDZmZDQ2ZTIzNmEzNzU2ODJmNTMzMWNmYjExY2U2YTBkOGVkNDI4M2ZkMWMwODM4Njg2M2U4MmZmNDg=",
+    "embeddableLaunchScript": false,
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": []
   },
-  "entities": [
-    "Customer",
-    "Product",
-    "ProductCategory",
-    "ProductOrder",
-    "OrderItem",
-    "Invoice",
-    "Shipment",
-    "Notification"
-  ]
+  "entities": ["Customer", "Product", "ProductCategory", "ProductOrder", "OrderItem", "Invoice", "Shipment", "Notification"]
 }

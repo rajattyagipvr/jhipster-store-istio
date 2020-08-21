@@ -4,16 +4,12 @@
     {
       "fieldName": "code",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "date",
       "fieldType": "Instant",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "details",
@@ -23,31 +19,23 @@
       "fieldName": "status",
       "fieldType": "InvoiceStatus",
       "fieldValues": "PAID,ISSUED,CANCELLED",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "paymentMethod",
       "fieldType": "PaymentMethod",
       "fieldValues": "CREDIT_CARD,CASH_ON_DELIVERY,PAYPAL",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "paymentDate",
       "fieldType": "Instant",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "paymentAmount",
       "fieldType": "BigDecimal",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     }
   ],
   "relationships": [
@@ -58,7 +46,7 @@
       "relationshipName": "shipment"
     }
   ],
-  "changelogDate": "20200821172636",
+  "changelogDate": "20200821173403",
   "javadoc": "Entities for Invoice microservice",
   "entityTableName": "invoice",
   "dto": "no",
@@ -69,9 +57,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "invoice"
-  ],
+  "applications": ["store", "invoice"],
   "microserviceName": "invoice"
 }

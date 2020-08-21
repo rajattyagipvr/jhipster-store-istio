@@ -4,9 +4,7 @@
     {
       "fieldName": "name",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "description",
@@ -15,19 +13,14 @@
     {
       "fieldName": "price",
       "fieldType": "BigDecimal",
-      "fieldValidateRules": [
-        "required",
-        "min"
-      ],
+      "fieldValidateRules": ["required", "min"],
       "fieldValidateRulesMin": "0"
     },
     {
       "fieldName": "size",
       "fieldType": "Size",
       "fieldValues": "S,M,L,XL,XXL",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "image",
@@ -44,7 +37,7 @@
       "otherEntityField": "name"
     }
   ],
-  "changelogDate": "20200821172236",
+  "changelogDate": "20200821173003",
   "javadoc": "Entities for product microservice",
   "entityTableName": "product",
   "dto": "no",
@@ -55,9 +48,6 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": [
-    "store",
-    "product"
-  ],
+  "applications": ["store", "product"],
   "microserviceName": "product"
 }
