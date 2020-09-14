@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes-helm",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": ["store", "invoice", "notification", "product"],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": false,
+    "dockerRepositoryName": "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store",
+    "dockerPushCommand": "docker push",
+    "istio": true,
+    "kubernetesServiceType": "Ingress",
+    "kubernetesNamespace": "jhipster",
+    "ingressDomain": "jhipster.cluster12.tagscloud.org",
+    "jwtSecretKey": "NTA5Nzk1NjI1YzE1ZmU2YWYyNTZiMDcyZTkxYjA2NGI5ZmVkN2Q0YjBmZDMzMzk2MjYxNGJkMzdiNzFmZGI4ODMyZjJkOTU1N2U5ZmYxYTIzZjFjYzM4NGViYjIxYzIwNzBmMg=="
+  }
+}

@@ -55,9 +55,6 @@ spring:
     allow-bean-definition-overriding: true
   messages:
     basename: i18n/messages
-  mvc:
-    favicon:
-      enabled: false
   task:
     execution:
       thread-name-prefix: invoice-task-
@@ -97,7 +94,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: NjVmN2JiZjVlNTY1YzI2MmQ0NDM5ZGE1ZDU5ZTQyY2JmZTQ4M2JlNjMzZWJhMTI3OGJkZDM5MDBlZjdmMzE5NzYwZTEzOTE5MGUwMTA2NGVjODk5ZjYzMzNhZmZlNDQ0N2FjZDE5MzBiMTc4NjdiMDEyNGU2MDljZjk0NGExODc=
+        base64-secret: ZjhkNzlkODdhZWY0MjZlNjZlMjJkZWZkMjA3MGY0ODdkMDEyYWIxMGMzMTI2MzU0ZjMzZjdlZGRmOTBhODNkYjFjOGI1YzU5OGZmZTUxMWRiMDVkNWZmYTI0ZWM0ZGUwYjQ3ZGMxYWZhMGNlNzljNDI2ZjFlNTE2M2E1M2JmMGU=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

@@ -2,16 +2,16 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-    - image: deepu105/store
+    - image: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/store
       context: ../store
       jib: {}
-    - image: deepu105/invoice
+    - image: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/invoice
       context: ../invoice
       jib: {}
-    - image: deepu105/notification
+    - image: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/notification
       context: ../notification
       jib: {}
-    - image: deepu105/product
+    - image: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/product
       context: ../product
       jib: {}
   tagPolicy:

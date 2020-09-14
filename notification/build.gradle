@@ -180,9 +180,6 @@ dependencies {
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
     implementation "com.fasterxml.jackson.core:jackson-annotations"
     implementation "com.fasterxml.jackson.core:jackson-databind"
-    implementation "com.fasterxml.jackson.module:jackson-module-afterburner"
-    implementation "org.apache.commons:commons-lang3"
-    implementation "commons-io:commons-io"
     implementation "javax.transaction:javax.transaction-api"
     implementation "org.springframework.boot:spring-boot-loader-tools"
     implementation "org.springframework.boot:spring-boot-starter-mail"
@@ -250,7 +247,7 @@ task cleanResources(type: Delete) {
 }
 
 wrapper {
-    gradleVersion = "6.4.1"
+    gradleVersion = "6.5"
 }
 
 compileJava.dependsOn processResources

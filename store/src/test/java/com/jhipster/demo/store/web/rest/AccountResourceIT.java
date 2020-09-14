@@ -12,7 +12,6 @@ import com.jhipster.demo.store.service.dto.UserDTO;
 import com.jhipster.demo.store.web.rest.vm.KeyAndPasswordVM;
 import com.jhipster.demo.store.web.rest.vm.ManagedUserVM;
 import org.apache.commons.lang3.RandomStringUtils;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

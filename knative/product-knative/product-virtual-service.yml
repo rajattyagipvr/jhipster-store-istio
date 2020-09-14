@@ -1,0 +1,24 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: product-virtualservice
+  namespace: default
+spec:
+  gateways:
+    - mesh
+  hosts:
+    - product-knative
+  http:
+    - route:
+        - destination:
+            host: product-knative
+            subset: 'v1'
+          headers:
+            request:
+              add:
+                Knative-Serving-Namespace: default
+                Knative-Serving-Revision: product-knative
+          weight: 100
+      retries:
+        attempts: 3
+        perTryTimeout: 2s

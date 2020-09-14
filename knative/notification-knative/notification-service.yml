@@ -1,0 +1,77 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: notification
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: notification
+        version: 'v1'
+  runLatest:
+    configuration:
+      revisionTemplate:
+        metadata:
+          name: notification-knative
+          annotations:
+            # this prevents from scale to zero
+            autoscaling.knative.dev/minScale: '1'
+          labels:
+            app: notification
+            version: 'v1'
+        spec:
+          containers:
+            - name: notification-app
+              image: testbasereponame/notification
+              env:
+                - name: SPRING_PROFILES_ACTIVE
+                  value: prod
+                - name: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: jwt-secret
+                      key: secret
+                - name: SPRING_DATA_MONGODB_DATABASE
+                  value: notification
+                - name: SPRING_DATA_MONGODB_URI
+                  value: 'mongodb://notification-mongodb-0.notification-mongodb.default:27017'
+                - name: JHIPSTER_METRICS_LOGS_ENABLED
+                  value: 'true'
+                - name: JHIPSTER_LOGGING_LOGSTASH_ENABLED
+                  value: 'true'
+                - name: JHIPSTER_LOGGING_LOGSTASH_HOST
+                  value: jhipster-logstash
+                - name: SPRING_ZIPKIN_ENABLED
+                  value: 'true'
+                - name: SPRING_ZIPKIN_BASE_URL
+                  value: http://jhipster-zipkin
+                - name: SPRING_SLEUTH_PROPAGATION_KEYS
+                  value: 'x-request-id,x-ot-span-context'
+                - name: JAVA_OPTS
+                  value: ' -Xmx256m -Xms256m'
+              resources:
+                requests:
+                  memory: '512Mi'
+                  cpu: '500m'
+                limits:
+                  memory: '1Gi'
+                  cpu: '1'
+              ports:
+                - containerPort: 8083
+              readinessProbe:
+                httpGet:
+                  path: /services/notification/management/health
+                initialDelaySeconds: 20
+                periodSeconds: 15
+                failureThreshold: 6
+                timeoutSeconds: 5
+              livenessProbe:
+                httpGet:
+                  path: /services/notification/management/info
+                initialDelaySeconds: 120
+                timeoutSeconds: 5
+  traffic:
+    - tag: latest
+      percent: 100
+      latestRevision: true

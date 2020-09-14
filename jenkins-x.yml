@@ -131,9 +131,74 @@ pipelineConfig:
           #   #   dir: /workspace/source
           #   #   name: promote-release
           #   #   image: gcr.io/jenkinsxio/builder-go
-            
+          - name: build-images
+            options:
+              volumes:
+                - name: kaniko-secret
+                  secret:
+                    secretName: kaniko-secret
+                    items:
+                      - key: kaniko-secret
+                        path: kaniko/kaniko-secret.json
+              containerOptions:
+                volumeMounts:
+                  - name: kaniko-secret
+                    mountPath: /secrets
+            environment:
+              - name: PUSH_LATEST
+                value: "false"
+              - name: GIT_COMMITTER_EMAIL
+                value: jenkins-x@googlegroups.com
+              - name: GIT_COMMITTER_NAME
+                value: jenkins-x-bot
+              - name: GIT_AUTHOR_EMAIL
+                value: jenkins-x@googlegroups.com
+              - name: GIT_AUTHOR_NAME
+                value: jenkins-x-bot
+            steps:
+            # build base images
+            - name: build-and-push-base-store
+              command: /kaniko/executor
+              args:
+                - --dockerfile=/workspace/source/store/Dockerfile
+                - --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME_store:$(cat ./VERSION)
+                - --context=/workspace/source/store
+                - --skip-tls-verify-registry=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG
+                - --cache-repo=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/cache
+                - --cache=true
+                - --cache-dir=/workspace
+            - name: build-and-push-base-invoice
+              command: /kaniko/executor
+              args:
+                - --dockerfile=/workspace/source/invoice/Dockerfile
+                - --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME_invoice:$(cat ./VERSION)
+                - --context=/workspace/source/invoice
+                - --skip-tls-verify-registry=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG
+                - --cache-repo=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/cache
+                - --cache=true
+                - --cache-dir=/workspace
+            - name: build-and-push-base-notification
+              command: /kaniko/executor
+              args:
+                - --dockerfile=/workspace/source/notification/Dockerfile
+                - --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME_notification:$(cat ./VERSION)
+                - --context=/workspace/source/notification
+                - --skip-tls-verify-registry=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG
+                - --cache-repo=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/cache
+                - --cache=true
+                - --cache-dir=/workspace
+            - name: build-and-push-base-product
+              command: /kaniko/executor
+              args:
+                - --dockerfile=/workspace/source/product/Dockerfile
+                - --destination=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/$APP_NAME_product:$(cat ./VERSION)
+                - --context=/workspace/source/product
+                - --skip-tls-verify-registry=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG
+                - --cache-repo=$DOCKER_REGISTRY/$DOCKER_REGISTRY_ORG/cache
+                - --cache=true
+                - --cache-dir=/workspace   
           # - name: promote
-          #   dir: ./charts/REPLACE_ME_APP_NAME
+          #   dir: ./charts/jhipster-store-istio
           #   steps:
           #     - sh: jx step changelog --version v$(cat ../../VERSION)
           #       name: changelog
@@ -147,7 +212,7 @@ pipelineConfig:
             
             
           #   # - command: jx step changelog --version v\$(cat ../../VERSION)
-          #   #   dir: ./charts/REPLACE_ME_APP_NAME
+          #   #   dir: ./charts/jhipster-store-istio
           #   #   image: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/jxl
           #   #   name: promote-changelog
           #   # - command: jx step helm release

@@ -220,15 +220,12 @@ dependencies {
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5"
     implementation "com.fasterxml.jackson.core:jackson-annotations"
     implementation "com.fasterxml.jackson.core:jackson-databind"
-    implementation "com.fasterxml.jackson.module:jackson-module-afterburner"
     implementation "com.hazelcast:hazelcast"
     implementation "com.hazelcast:hazelcast-hibernate53"
     implementation "com.hazelcast:hazelcast-spring"
     implementation "javax.cache:cache-api"
     implementation "org.hibernate:hibernate-core"
     implementation "com.zaxxer:HikariCP"
-    implementation "org.apache.commons:commons-lang3"
-    implementation "commons-io:commons-io"
     implementation "javax.transaction:javax.transaction-api"
     implementation "org.hibernate:hibernate-entitymanager"
     implementation "org.hibernate.validator:hibernate-validator"
@@ -307,7 +304,7 @@ task cleanResources(type: Delete) {
 }
 
 wrapper {
-    gradleVersion = "6.4.1"
+    gradleVersion = "6.5"
 }
 
 compileJava.dependsOn processResources

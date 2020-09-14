@@ -1,0 +1,66 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: invoice
+  namespace: jhipster
+spec:
+  template:
+    metadata:
+      labels:
+        app: invoice
+        version: 'v1'
+  runLatest:
+    configuration:
+      revisionTemplate:
+        metadata:
+          name: invoice-knative
+          annotations:
+            # this prevents from scale to zero
+            autoscaling.knative.dev/minScale: '1'
+          labels:
+            app: invoice
+            version: 'v1'
+        spec:
+          containers:
+            - name: invoice-app
+              image: 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/invoice
+              imagePullPolicy: Always
+              env:
+                - name: SPRING_PROFILES_ACTIVE
+                  value: prod
+                - name: JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: jwt-secret
+                      key: secret
+                - name: SPRING_DATASOURCE_URL
+                  value: jdbc:mysql://invoice-mysql.jhipster.svc.cluster.local:3306/invoice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+                - name: SPRING_SLEUTH_PROPAGATION_KEYS
+                  value: 'x-request-id,x-ot-span-context'
+                - name: JAVA_OPTS
+                  value: ' -Xmx256m -Xms256m'
+              resources:
+                requests:
+                  memory: '512Mi'
+                  cpu: '500m'
+                limits:
+                  memory: '1Gi'
+                  cpu: '1'
+              ports:
+                - containerPort: 8082
+              readinessProbe:
+                httpGet:
+                  path: /services/invoice/management/health
+                initialDelaySeconds: 20
+                periodSeconds: 15
+                failureThreshold: 6
+                timeoutSeconds: 5
+              livenessProbe:
+                httpGet:
+                  path: /services/invoice/management/info
+                initialDelaySeconds: 120
+                timeoutSeconds: 5
+  traffic:
+    - tag: latest
+      percent: 100
+      latestRevision: true

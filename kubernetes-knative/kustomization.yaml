@@ -1,0 +1,65 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- invoice-knative/templates/invoice-destination-rule.yml
+- invoice-knative/templates/invoice-service.yml
+- invoice-knative/templates/invoice-virtual-service.yml
+- invoice-knative/templates/jwt-secret.yml
+- notification-knative/templates/jwt-secret.yml
+- notification-knative/templates/notification-destination-rule.yml
+- notification-knative/templates/notification-service.yml
+- notification-knative/templates/notification-virtual-service.yml
+- product-knative/templates/jwt-secret.yml
+- product-knative/templates/product-destination-rule.yml
+- product-knative/templates/product-service.yml
+- product-knative/templates/product-virtual-service.yml
+- store-knative/templates/jwt-secret.yml
+- store-knative/templates/store-destination-rule.yml
+- store-knative/templates/store-gateway.yml
+- store-knative/templates/store-service.yml
+- store-knative/templates/store-virtual-service.yml
+- csvc-knative/templates/grafana-gateway.yml
+- csvc-knative/templates/kiali-gateway.yml
+- csvc-knative/templates/zipkin-gateway.yml
+
+patchesJson6902:
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: Gateway
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      name: grafana-gw-virtualservice
+      kind: VirtualService
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: Gateway
+      name: kiali-observability-gateway
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      name: kiali-gw-virtualservice
+      kind: VirtualService
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      kind: Gateway
+      name: zipkin-observability-gateway
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml
+  - target:
+      group: networking.istio.io
+      version: v1alpha3
+      name: zipkin-gw-virtualservice
+      kind: VirtualService
+      namespace: jhipster
+    path: patch-k8s/istio-namespace.yml

@@ -5,14 +5,14 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag store deepu105/store
-$ docker push deepu105/store
-$ docker image tag invoice deepu105/invoice
-$ docker push deepu105/invoice
-$ docker image tag notification deepu105/notification
-$ docker push deepu105/notification
-$ docker image tag product deepu105/product
-$ docker push deepu105/product
+$ docker image tag store 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/store
+$ docker push 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/store
+$ docker image tag invoice 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/invoice
+$ docker push 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/invoice
+$ docker image tag notification 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/notification
+$ docker push 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/notification
+$ docker image tag product 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/product
+$ docker push 702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store/product
 ```
 
 ## Deployment

@@ -8,12 +8,12 @@
     "clusteredDbApps": [],
     "consoleOptions": [],
     "serviceDiscoveryType": false,
-    "dockerRepositoryName": "deepu105",
+    "dockerRepositoryName": "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store",
     "dockerPushCommand": "docker push",
     "kubernetesNamespace": "jhipster",
     "kubernetesServiceType": "Ingress",
-    "ingressDomain": "cluster12.tagscloud.org",
+    "ingressDomain": "jhipster.cluster12.tagscloud.org",
     "istio": true,
-    "jwtSecretKey": "NWI5ZDUyYTRiMTdiZjQ0YWVjOTQ2YmRhOTNmYTI3OTcwM2ZjMGFiODAyYzE1NzRmMTc3ZjcwNWYwNjJiYzU3ZDBjYmM1MDAwMDQwYzVkYzNkMDljMDAyNzllNTNjYzk5MjAwNQ=="
+    "jwtSecretKey": "ZmFmMjM5MTQ1ZGJiMTIxNjlkNzA4NWFlNjFhY2ZmYTYwZDczOTEzZmRiNDVmM2U4ZjViYzY4ZjliYzVlNzg2OGI3N2VkZjAyYmIwNTkzMTc2NjQyM2JiZjA0MzljZTE2NDZhNQ=="
   }
 }

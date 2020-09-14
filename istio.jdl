@@ -216,11 +216,34 @@ microservice Notification with notification
 deployment {
   deploymentType kubernetes
   appsFolders [store, invoice, notification, product]
-  dockerRepositoryName "deepu105"
+  dockerRepositoryName "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store"
   serviceDiscoveryType no
   istio true
   kubernetesServiceType Ingress
   kubernetesNamespace jhipster
-  ingressDomain "cluster12.tagscloud.org"
+  ingressDomain "jhipster.cluster12.tagscloud.org"
+}
+
+
+deployment {
+  deploymentType kubernetes-knative
+  appsFolders [store, invoice, notification, product]
+  dockerRepositoryName "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store"
+  serviceDiscoveryType no
+  istio true
+  kubernetesServiceType Ingress
+  kubernetesNamespace jhipster
+  ingressDomain "jhipster.cluster12.tagscloud.org"
+}
+
+deployment {
+  deploymentType kubernetes-helm
+  appsFolders [store, invoice, notification, product]
+  dockerRepositoryName "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store"
+  serviceDiscoveryType no
+  istio true
+  kubernetesServiceType Ingress
+  kubernetesNamespace jhipster
+  ingressDomain "jhipster.cluster12.tagscloud.org"
 }
 

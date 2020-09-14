@@ -33,7 +33,7 @@
     }
   ],
   "relationships": [],
-  "changelogDate": "20200821173603",
+  "changelogDate": "20200821182127",
   "javadoc": "Entities for notification microservice",
   "entityTableName": "notification",
   "dto": "no",

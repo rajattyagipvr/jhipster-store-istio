@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes-knative",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": ["store", "invoice", "notification", "product"],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": false,
+    "dockerRepositoryName": "702769831180.dkr.ecr.ap-south-1.amazonaws.com/702769831180/store",
+    "dockerPushCommand": "docker push",
+    "istio": true,
+    "kubernetesServiceType": "Ingress",
+    "kubernetesNamespace": "jhipster",
+    "ingressDomain": "jhipster.cluster12.tagscloud.org",
+    "jwtSecretKey": "ZjhlYzM3MGU0YjQzMzE1OGQyZDdkYzBlZmQzODdkNDYzZWI0NjMxNjc2NGZkOWJjNzNlNjhmODZkMTUzODY2NWJhODQ3YTYyNDIyOTNhZGNhNzJiMjI5MzQ2NGZkOTkyOThjYw=="
+  }
+}

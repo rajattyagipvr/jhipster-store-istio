@@ -22,10 +22,10 @@ logSummary() {
     echo ""
         echo "#####################################################"
         echo "Please find the below useful endpoints,"
-        echo "Gateway - http://store.jhipster.cluster12.tagscloud.org"
-        echo "Zipkin - http://zipkin.istio-system.cluster12.tagscloud.org"
-        echo "Grafana - http://grafana.istio-system.cluster12.tagscloud.org"
-        echo "Kiali - http://kiali.istio-system.cluster12.tagscloud.org"
+        echo "Gateway - http://store.jhipster.jhipster.cluster12.tagscloud.org"
+        echo "Zipkin - http://zipkin.istio-system.jhipster.cluster12.tagscloud.org"
+        echo "Grafana - http://grafana.istio-system.jhipster.cluster12.tagscloud.org"
+        echo "Kiali - http://kiali.istio-system.jhipster.cluster12.tagscloud.org"
         echo "#####################################################"
 }
 
